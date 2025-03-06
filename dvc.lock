@@ -1,0 +1,36 @@
+schema: '2.0'
+stages:
+  stage01:
+    cmd: python stage01.py
+    deps:
+    - path: stage01.py
+      hash: md5
+      md5: affd0bd768fb3c92b11025b2dbad4873
+      size: 184
+    outs:
+    - path: artifact.txt
+      hash: md5
+      md5: fb9cd7ed707ca97019ca48a5467f73a1
+      size: 50
+  stage02:
+    cmd: python stage02.py
+    deps:
+    - path: artifact.txt
+      hash: md5
+      md5: fb9cd7ed707ca97019ca48a5467f73a1
+      size: 50
+    - path: stage02.py
+      hash: md5
+      md5: 83ef46578a56bdf96548cb8c7226c86d
+      size: 127
+  stage03:
+    cmd: python stage03.py
+    deps:
+    - path: artifact2.txt
+      hash: md5
+      md5: 127a958e823f85d5b241cd9ecb1eea59
+      size: 19
+    - path: stage03.py
+      hash: md5
+      md5: d41d8cd98f00b204e9800998ecf8427e
+      size: 0
